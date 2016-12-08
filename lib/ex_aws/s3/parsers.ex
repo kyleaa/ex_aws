@@ -45,8 +45,6 @@ if Code.ensure_loaded?(SweetXml) do
       {:ok, %{resp | body: parsed_body}}
     end
     def parse_initiate_multipart_upload(val), do: val
-
-    def parse_upload_part_copy(val), do: val
     def parse_complete_multipart_upload(val), do: val
 
     def parse_list_multipart_uploads({:ok, %{body: xml} = resp}) do
@@ -70,7 +68,6 @@ else
   defmodule ExAws.S3.Parsers do
     def parse_list_objects(val), do: val
     def parse_initiate_multipart_upload(val), do: val
-    def parse_upload_part_copy(val), do: val
     def parse_complete_multipart_upload(val), do: val
     def parse_list_parts(val), do: val
   end
